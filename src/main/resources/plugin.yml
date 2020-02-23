@@ -1,0 +1,16 @@
+# https://bukkit.gamepedia.com/Plugin_YAML
+
+name: Hub
+version: 1.0
+api-version: 1.13
+description: Hub
+authors: [Guuz]
+
+main: nl.devv.hub.Main
+
+commands:
+
+permissions:
+  hub.admin:
+    description: Geeft je admin permissies.
+
