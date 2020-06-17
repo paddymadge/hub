@@ -56,6 +56,13 @@ public class Main extends JavaPlugin implements Listener {
             SkyblockMeta.setDisplayName(ChatColor.BLUE + "Skyblock");
             Skyblock.setItemMeta(SkyblockMeta);
 
+            ItemStack Survival = new ItemStack(Material.APPLE);
+            ItemMeta SurvivalMeta = Survival.getItemMeta();
+            assert SurvivalMeta != null;
+            SurvivalMeta.setDisplayName(ChatColor.RED + "Survival");
+            Survival.setItemMeta(SurvivalMeta);
+
+            inv.setItem(13, Survival);
             inv.setItem(11, Kingdom);
             inv.setItem(15, Skyblock);
 
@@ -97,6 +104,15 @@ public class Main extends JavaPlugin implements Listener {
                 player.sendPluginMessage(this, "BungeeCord", out.toByteArray());
                 player.closeInventory();
                 break;
+
+            case APPLE:
+                player.sendMessage(ChatColor.BLUE + "Je wordt naar de Survival server gestuurd!");
+                out.writeUTF("Connect");
+                out.writeUTF("Survival");
+                player.sendPluginMessage(this, "BungeeCord", out.toByteArray());
+                player.closeInventory();
+                break;
+
 
             default:
                 player.closeInventory();
